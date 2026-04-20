@@ -27,3 +27,11 @@ You will need a virtual warehouse to run the SQL scripts. These scripts will not
 4. Inference with the Fine-Tuned Model
 
    Run [03_Inference.sql](https://github.com/sfc-gh-csharkey/AI_COMPLETE_w_FineTunned_LLM/blob/main/03_Inference.sql) to classify all transcripts using ```SNOWFLAKE.CORTEX.COMPLETE``` with the fine-tuned model. The script evaluates overall accuracy, per-category accuracy, and surfaces misclassifications so you can compare the results against the AI_CLASSIFY baseline from step 2.
+
+5. Cost Summary
+
+   Run [04_Cost_Summary.sql](https://github.com/sfc-gh-csharkey/AI_COMPLETE_w_FineTunned_LLM/blob/main/04_Cost_Summary.sql) to review the AI credit and token consumption for this demo. The script joins ```SNOWFLAKE.ACCOUNT_USAGE.CORTEX_AISQL_USAGE_HISTORY``` with ```QUERY_HISTORY``` to break down costs by function (```AI_CLASSIFY```, ```COMPLETE```, ```FINETUNE```) and model. Two configurable session parameters control the output:
+   - ```AI_CREDIT_PRICE_PER_CREDIT``` — your effective USD per AI credit (default ```2.0```).
+   - ```AI_USAGE_LOOKBACK_DAYS``` — number of days to look back for usage data (default ```1```).
+
+   The script also includes a per-query cost detail view and cost optimization tips for both the AI_CLASSIFY and fine-tuned COMPLETE approaches.
