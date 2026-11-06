@@ -1,7 +1,5 @@
 # AI_COMPLETE w/ a Fine-Tuned LLM
 
-<img width="85" alt="map-user" src="https://img.shields.io/badge/views-085-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-028-green">
-
 Example of fine-tuning llama3-8b for classification and invoking the fine-tuned model via. AI_COMPLETE. This example compares two approaches to classifying customer service call transcripts into one of six categories: Billing, Technical Support, Account Management, Product Inquiry, Complaint, and Cancellation.
 
 The first approach uses the built-in ```AI_CLASSIFY``` function. The second approach fine-tunes llama3-8b on labeled training data and then runs inference via. ```AI_COMPLETE``` using the fine-tuned model. Both approaches include accuracy evaluation and misclassification analysis so you can compare results.
